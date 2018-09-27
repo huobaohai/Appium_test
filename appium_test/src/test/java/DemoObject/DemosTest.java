@@ -1,12 +1,12 @@
-﻿package DemoObject;
+package DemoObject;
+
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.offset.PointOption;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.After;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.ScreenOrientation;
@@ -18,7 +18,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-public class DemoTest {
+
+public class DemosTest {
 
     private AndroidDriver<WebElement> appiumDriver;
 //    private AndroidDriver driver;
@@ -53,9 +54,9 @@ public class DemoTest {
         appiumDriver.quit();
     }
 
-    @Test
+//    @Test
     public void test3() throws InterruptedException{
-        appiumDriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+        appiumDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         appiumDriver.findElementByXPath("//*[@text='Views']").click();
         WebElement list = appiumDriver.findElementById("android:id/list");
         WebElement webview = list.findElement(MobileBy.AndroidUIAutomator(
@@ -99,11 +100,9 @@ public class DemoTest {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(text))).click();
         appiumDriver.navigate().back();
         appiumDriver.rotate(ScreenOrientation.LANDSCAPE);
-
         appiumDriver.openNotifications();
-	appiumDriver.navigate().back();
+        appiumDriver.navigate().back();
         appiumDriver.rotate(ScreenOrientation.PORTRAIT);
-	
     }
 
     @Test
