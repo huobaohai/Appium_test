@@ -1,4 +1,4 @@
-package pageobject;
+package xueqiuObject;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.Before;
@@ -10,16 +10,16 @@ import org.openqa.selenium.support.PageFactory;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class shellTest {
+public class XueqiuTest {
+
     private AndroidDriver<WebElement> driver;
 
-  //  @Before
+    @Before
     public void setUp() throws MalformedURLException {
-        System.out.println("---> "+System.getenv("deviceName"));
         DesiredCapabilities cap = new DesiredCapabilities();
-
+        System.out.println(System.getenv("deviceName"));
         cap.setCapability("platformName","android");
-        cap.setCapability("deviceName",System.getenv("deviceName"));
+        cap.setCapability("deviceName","192.168.71.101:5555");
         cap.setCapability("noReset",true);
         cap.setCapability("fullReset",false);
         cap.setCapability("appPackage","com.xueqiu.android");
@@ -28,7 +28,7 @@ public class shellTest {
         driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"),cap);
     }
 
-//    @Test
+    @Test
     public void test() throws InterruptedException {
         Welcome wel = new Welcome();
         PageFactory.initElements(driver,wel);

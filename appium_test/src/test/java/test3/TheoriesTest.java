@@ -1,11 +1,11 @@
-package test1;
+package test3;
 
 import org.junit.experimental.theories.DataPoints;
 import org.junit.experimental.theories.Theory;
 import org.junit.runner.RunWith;
 
 @RunWith(org.junit.experimental.theories.Theories.class)
-public class Theories {
+public class TheoriesTest {
 
     @DataPoints
     public static String[] s = {"huo","bao","hai"};

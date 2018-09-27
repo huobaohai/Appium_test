@@ -1,4 +1,4 @@
-package pageobject;
+package DemoObject;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
@@ -18,7 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-public class toast_test {
+public class DemoTest {
 
     private AndroidDriver<WebElement> appiumDriver;
 //    private AndroidDriver driver;
@@ -50,7 +50,7 @@ public class toast_test {
 
     @After
     public void close(){
-        appiumDriver.navigate().back();
+        appiumDriver.quit();
     }
 
     @Test
@@ -99,7 +99,9 @@ public class toast_test {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(text))).click();
         appiumDriver.navigate().back();
         appiumDriver.rotate(ScreenOrientation.LANDSCAPE);
+
         appiumDriver.openNotifications();
+        appiumDriver.rotate(ScreenOrientation.PORTRAIT);
     }
 
     @Test
@@ -148,12 +150,12 @@ public class toast_test {
             }
         }
         finally {
-            System.out.println(appiumDriver.getPageSource());
-            for (WebElement e:appiumDriver.findElementsByXPath("//*")){
-                System.out.println();
-                System.out.println( "This Tag is < " + e.getTagName() + " > , content is < " + e.getText() + " >");
-//                System.out.println(e.getAttribute("resource-id"));
-            }
+//            System.out.println(appiumDriver.getPageSource());
+//            for (WebElement e:appiumDriver.findElementsByXPath("//*")){
+//                System.out.println();
+//                System.out.println( "This Tag is < " + e.getTagName() + " > , content is < " + e.getText() + " >");
+////                System.out.println(e.getAttribute("resource-id"));
+//            }
         }
     }
 
