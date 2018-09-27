@@ -1,4 +1,4 @@
-package DemoObject;
+﻿package DemoObject;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
@@ -101,7 +101,9 @@ public class DemoTest {
         appiumDriver.rotate(ScreenOrientation.LANDSCAPE);
 
         appiumDriver.openNotifications();
+	appiumDriver.navigate().back();
         appiumDriver.rotate(ScreenOrientation.PORTRAIT);
+	
     }
 
     @Test
