@@ -13,7 +13,7 @@ import java.net.URL;
 public class shellTest {
     private AndroidDriver<WebElement> driver;
 
-    @Before
+  //  @Before
     public void setUp() throws MalformedURLException {
         System.out.println("---> "+System.getenv("deviceName"));
         DesiredCapabilities cap = new DesiredCapabilities();
@@ -28,7 +28,7 @@ public class shellTest {
         driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"),cap);
     }
 
-    @Test
+//    @Test
     public void test() throws InterruptedException {
         Welcome wel = new Welcome();
         PageFactory.initElements(driver,wel);
