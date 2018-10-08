@@ -109,7 +109,7 @@ public class DemosTest {
     public void test2() throws Exception {
         System.out.println(appiumDriver.manage().logs().getAvailableLogTypes());
         for (Object s : appiumDriver.manage().logs().get("logcat").getAll().toArray()){
-            System.out.println(s);
+//            System.out.println(s);
         }
 
         System.out.println(appiumDriver.getSupportedPerformanceDataTypes());
